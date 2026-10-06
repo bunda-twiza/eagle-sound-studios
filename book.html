@@ -1,0 +1,244 @@
+html
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book a Session | Eagle Sound Studios</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/book.css"></head>
+<body>
+<!-- HEADER -->
+<header>
+<div class="container nav">
+<a class="logo" href="index.html">
+<img alt="Eagle Sound Studios" src="EAGLE-SOUND-STUDIOS-LOGO.png"/>
+<div class="logo-text">EAGLE SOUND<span>STUDIOS · LUSAKA</span></div>
+</a>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html#home">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#services">Services</a></li>
+<li><a href="index.html#artists">Artists</a></li>
+<li><a href="index.html#membership">Membership</a></li>
+<li><a class="nav-button" href="book.html">Book Now</a></li>
+</ul>
+</div>
+</header>
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="eyebrow">Booking</div>
+<h1>Book A<br/><span>Session.</span></h1>
+<p>Check our availability calendar below, then fill in the form to request your session. We'll confirm within 24 hours.</p>
+</div>
+</section>
+<!-- AVAILABILITY CALENDAR -->
+<section class="section availability">
+<div class="container">
+<div class="availability-header">
+<div>
+<div class="section-number">01 / AVAILABILITY</div>
+<h2 class="section-title">Check The<br/><span class="gold">Calendar.</span></h2>
+</div>
+<div>
+<p class="section-description">See which dates are already booked. Gold = occupied. Light = available. Pick your dates accordingly.</p>
+</div>
+</div>
+<!-- GOOGLE CALENDAR EMBED -->
+<div class="calendar-embed">
+<iframe class="" frameborder="0" height="500" scrolling="no" src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&amp;ctz=Africa%2FLusaka&amp;mode=MONTH&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;bgcolor=%23111&amp;color=%23F8B801">
+</iframe>
+</div>
+<div class="calendar-note">
+<div class="calendar-key">
+<span class="dot occupied"></span>
+<span>Occupied, already booked</span>
+</div>
+<div class="calendar-key">
+<span class="dot available"></span>
+<span>Available, book your session</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BOOKING FORM -->
+<section class="section booking">
+<div class="container">
+<div class="booking-grid">
+<!-- FORM -->
+<div class="booking-form-wrap">
+<h2>Session <span>Details</span></h2>
+<p class="form-intro">Fill in the form below. Required fields are marked with *.</p>
+<form id="bookingForm">
+<!-- Service Type -->
+<div class="form-group full">
+<label>What do you need? *</label>
+<div class="service-select" id="serviceSelect">
+<label class="service-option">
+<input name="service" required="" type="radio" value="Recording"/>
+<span class="service-label">Recording</span>
+<span class="service-sub">Vocals · Instruments</span>
+</label>
+<label class="service-option">
+<input name="service" type="radio" value="Mixing"/>
+<span class="service-label">Mixing</span>
+<span class="service-sub">Balance · Depth</span>
+</label>
+<label class="service-option">
+<input name="service" type="radio" value="Mastering"/>
+<span class="service-label">Mastering</span>
+<span class="service-sub">Final polish</span>
+</label>
+<label class="service-option">
+<input name="service" type="radio" value="Video Production"/>
+<span class="service-label">Video</span>
+<span class="service-sub">Music videos</span>
+</label>
+</div>
+</div>
+<!-- Session Length -->
+<div class="form-group full">
+<label>Session length *</label>
+<div class="session-select" id="sessionSelect">
+<label class="session-option">
+<input name="sessionLength" required="" type="radio" value="1 Hour"/>
+<span class="session-time">1hr</span>
+<span class="session-label">Quick</span>
+</label>
+<label class="session-option">
+<input name="sessionLength" type="radio" value="2 Hours"/>
+<span class="session-time">2hr</span>
+<span class="session-label">Standard</span>
+</label>
+<label class="session-option">
+<input name="sessionLength" type="radio" value="3 Hours"/>
+<span class="session-time">3hr</span>
+<span class="session-label">Deep work</span>
+</label>
+<label class="session-option">
+<input name="sessionLength" type="radio" value="Full Day"/>
+<span class="session-time">Full</span>
+<span class="session-label">Day session</span>
+</label>
+</div>
+</div>
+<!-- Date & Time -->
+<div class="form-row">
+<div class="form-group">
+<label for="bookingDate">Preferred date *</label>
+<input id="bookingDate" required="" type="date"/>
+</div>
+<div class="form-group">
+<label for="bookingTime">Preferred time *</label>
+<input id="bookingTime" required="" type="time"/>
+</div>
+</div>
+<!-- Contact -->
+<div class="form-row">
+<div class="form-group">
+<label for="bookName">Full name *</label>
+<input id="bookName" placeholder="Your name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="bookArtistName">Artist name</label>
+<input id="bookArtistName" placeholder="Stage name" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="bookEmail">Email *</label>
+<input id="bookEmail" placeholder="you@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="bookPhone">Phone *</label>
+<input id="bookPhone" placeholder="+260..." required="" type="tel"/>
+</div>
+</div>
+<!-- MEMBER CHECKBOX (Self-Declaration) -->
+<div class="form-group full">
+<label>Membership</label>
+<label class="member-checkbox">
+<input id="isMember" name="isMember" type="checkbox" value="Yes"/>
+<div class="member-label">
+                I am an Eagle Sound member
+                <span class="member-sub">Members get priority booking, 3rd session free, and other perks.</span>
+</div>
+</label>
+<p class="member-note">
+              We'll verify your membership before confirming. Not a member yet? <a href="membership.html">Sign up here</a>, it's free.
+            </p>
+</div>
+<!-- Notes -->
+<div class="form-group full">
+<label for="bookNotes">What are you working on?</label>
+<textarea id="bookNotes" placeholder="Tell us about your project ,  genre, vibe, what you're hoping to achieve..."></textarea>
+</div>
+<button class="btn submit-button" type="submit">Request booking</button>
+<div class="success-message" id="successMessage">
+<strong>Request Sent</strong>
+<span>We'll confirm your session within 24 hours.</span>
+</div>
+</form>
+</div>
+<!-- SIDEBAR INFO -->
+<div class="booking-info">
+<h3>Good To <span class="gold">Know.</span></h3>
+<div class="info-block">
+<h4>Booking confirmation</h4>
+<p>We review every request and confirm your session within 24 hours. If your preferred time isn't available, we'll suggest the closest alternative.</p>
+</div>
+<div class="info-block">
+<h4>Check the calendar first</h4>
+<p>Look at our availability calendar above before picking a date. It updates in real time as sessions get booked.</p>
+</div>
+<div class="info-block">
+<h4>Half price Mondays</h4>
+<p>All sessions are <span class="highlight">50% off every Monday</span>. Members get priority booking. Mention it when you book.</p>
+</div>
+<div class="info-block">
+<h4>Member perks</h4>
+<p>Not a member yet? <a class="" href="membership.html">Join the membership</a> and unlock 3rd session free, birthday sessions, priority booking, and more.</p>
+</div>
+<div class="info-block">
+<h4>Need help?</h4>
+<p>Call or WhatsApp us directly if you'd rather talk through your session before booking.</p>
+<p class=""><a class="" href="tel:+260972548680">+260 97 254 8680</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer id="contact">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<h2>Eagle<br/><span class="gold">Sound.</span></h2>
+<p>A creative recording and production studio in Lusaka, Zambia.</p>
+</div>
+<div class="footer-column">
+<h4>Contact</h4>
+<p>Lusaka, Zambia</p>
+<a href="tel:+260972548680">+260 97 254 8680</a>
+<a href="mailto:eaglesoundstudio@gmail.com">eaglesoundstudio@gmail.com</a>
+</div>
+<div class="footer-column">
+<h4>Navigate</h4>
+<a href="index.html#home">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#artists">Artists</a>
+<a href="index.html#membership">Membership</a>
+<a href="book.html">Book Now</a>
+</div>
+</div>
+<div class="copyright"><span>© 2026 Eagle Sound Studios</span><span>Lusaka · Zambia</span></div>
+</div>
+</footer>
+
+<script defer="True" src="js/script.js"></script></body>
+</html>

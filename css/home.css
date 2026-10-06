@@ -1,0 +1,595 @@
+/* ----- reset & base ----- */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:#111;
+      color:#f5f1e8;
+      font-family:"Montserrat", sans-serif;
+      overflow-x:hidden;
+    }
+    a { color:inherit; text-decoration:none; }
+    button, input, textarea, select { font:inherit; }
+
+    /* ----- variables ----- */
+    :root {
+      --gold:#F8B801;
+      --black:#111;
+      --dark:#181818;
+      --paper:#f5f1e8;
+      --muted:#a7a7a7;
+      --line:rgba(255,255,255,0.15);
+    }
+
+    /* ----- container & helpers ----- */
+    .container { width:min(1200px,90%); margin:auto; }
+    .gold { color:var(--gold); }
+    .eyebrow {
+      color:var(--gold);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    .section { padding:110px 0; }
+    .section-number {
+      font-size:12px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:20px;
+    }
+    .section-title {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(48px,7vw,100px);
+      line-height:.92;
+      text-transform:uppercase;
+      letter-spacing:-1px;
+    }
+    .section-description {
+      max-width:550px;
+      color:#bdbdbd;
+      line-height:1.8;
+      margin-top:25px;
+    }
+
+    /* ----- header ----- */
+    header {
+      position:fixed; top:0; left:0; width:100%; z-index:1000;
+      padding:20px 0; transition:.3s;
+    }
+    header.scrolled {
+      background:rgba(17,17,17,0.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav {
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo {
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo img {
+      width:58px; height:58px; object-fit:contain;
+    }
+    .logo-text {
+      font-family:"Anton", sans-serif;
+      font-size:23px; letter-spacing:1px;
+    }
+    .logo-text span {
+      display:block; color:var(--gold);
+      font-family:"Montserrat", sans-serif;
+      font-size:8px; letter-spacing:3px; font-weight:700;
+    }
+    .nav-links {
+      display:flex; gap:30px; list-style:none; align-items:center;
+    }
+    .nav-links a {
+      font-size:12px; font-weight:700; text-transform:uppercase;
+      letter-spacing:1px; transition:.3s;
+    }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-button {
+      background:var(--gold); color:#111;
+      padding:13px 20px;
+    }
+    .menu-toggle {
+      display:none; border:0; background:transparent;
+      color:white; font-size:30px; cursor:pointer;
+    }
+
+    /* ----- hero ----- */
+    .hero {
+      min-height:100vh; display:flex; align-items:center;
+      position:relative; overflow:hidden; padding-top:100px;
+    }
+    .hero::before {
+      content:"EAGLE";
+      position:absolute; right:-80px; top:20%;
+      font-family:"Anton", sans-serif;
+      font-size:25vw; line-height:1;
+      color:rgba(248,184,1,0.035);
+      pointer-events:none;
+    }
+    .hero-content {
+      position:relative; z-index:2; width:100%;
+    }
+
+    /* ----- hero row (heading left, logo+content right) ----- */
+    .hero-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-top: 20px;
+    }
+
+    /* Left side - heading only */
+    .hero-heading {
+      flex: 1;
+    }
+
+    /* Right side - logo + content stacked */
+    .hero-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* Logo */
+    .hero-logo-right {
+      width: 600px;
+      flex-shrink: 0;
+    }
+
+    .hero-logo-right img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Content under the logo */
+    .hero-content-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .hero-content-right .hero-tagline {
+      font-size: 16px;
+      font-weight: 600;
+      color: #d0d0d0;
+      margin: 0;
+      max-width: 400px;
+      line-height: 1.7;
+    }
+
+    .hero-content-right .hero-location {
+      margin-top: 5px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-content-right .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Hero heading */
+    .hero h1 {
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: clamp(65px, 10vw, 145px);
+      line-height: .85;
+      letter-spacing: -2px;
+    }
+    .hero h1 span { color: var(--gold); }
+
+    .hero-side {
+      position:absolute; right:5%; bottom:50px;
+      writing-mode:vertical-rl; color:#777; font-size:10px;
+      letter-spacing:3px; text-transform:uppercase;
+    }
+
+    /* Responsive hero */
+    @media (max-width: 850px) {
+      .hero-row {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+      .hero-right {
+        align-items: center;
+      }
+      .hero-content-right .hero-tagline {
+        max-width: 100%;
+      }
+      .hero-content-right .hero-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .hero-logo-right {
+        width: 180px;
+      }
+      .hero-content-right .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-content-right .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* ----- buttons ----- */
+    .btn {
+      display:inline-flex; justify-content:center; align-items:center;
+      padding:17px 28px; font-weight:800; font-size:12px;
+      text-transform:uppercase; letter-spacing:1px;
+      border:1px solid var(--gold); cursor:pointer; transition:.3s;
+    }
+    .btn-primary {
+      background:var(--gold); color:#111;
+    }
+    .btn-primary:hover { transform:translateY(-3px); }
+    .btn-outline { color:white; }
+    .btn-outline:hover { background:white; color:#111; }
+
+    /* ----- about ----- */
+    .about { background:var(--paper); color:#111; }
+    .about-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+    }
+    .about .section-description { color:#555; }
+    .about-big {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(70px,10vw,150px);
+      line-height:.8; text-transform:uppercase;
+    }
+    .about-big span { color:var(--gold); }
+
+    /* ----- services ----- */
+    .services { background:#111; }
+    .services-header {
+      display:flex; justify-content:space-between; gap:30px;
+      align-items:end; margin-bottom:70px;
+    }
+    .service-list { border-top:1px solid var(--line); }
+    .service {
+      display:grid; grid-template-columns:80px 1fr 40px;
+      align-items:center; padding:30px 0;
+      border-bottom:1px solid var(--line); transition:.3s;
+    }
+    .service:hover { padding-left:15px; background:rgba(248,184,1,0.04); }
+    .service-number { color:var(--gold); font-size:12px; font-weight:800; }
+    .service h3 {
+      font-family:"Anton", sans-serif;
+      font-size:38px; text-transform:uppercase; font-weight:400;
+    }
+    .service p { color:#888; font-size:13px; margin-top:6px; }
+    .service-arrow { color:var(--gold); font-size:25px; }
+
+    /* ----- signing ----- */
+    .signing {
+      background:var(--gold); color:#111; position:relative; overflow:hidden;
+    }
+    .signing::after {
+      content:"SIGN"; position:absolute; right:-40px; bottom:-80px;
+      font-family:"Anton", sans-serif; font-size:250px; opacity:0.08;
+    }
+    .signing-grid {
+      display:grid; grid-template-columns:1.2fr 0.8fr;
+      gap:80px; position:relative; z-index:2;
+    }
+    .signing .section-number { color:#111; }
+    .signing h2 {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(55px,8vw,110px);
+      line-height:.85; text-transform:uppercase;
+    }
+    .signing p { max-width:550px; line-height:1.7; margin-top:25px; }
+    .signing-note {
+      border-left:3px solid #111; padding-left:25px; align-self:center;
+    }
+    .signing-note strong {
+      display:block; font-family:"Anton", sans-serif; font-size:35px;
+      text-transform:uppercase;
+    }
+    .signing-note span { display:block; margin-top:10px; line-height:1.6; }
+    .signing-button {
+      margin-top:35px; background:#111; color:white; border-color:#111;
+    }
+    .signing-button:hover { background:white; color:#111; }
+
+    /* ----- form ----- */
+    .form-wrapper {
+      display:none; margin-top:60px; background:#111; color:white;
+      padding:40px; position:relative; z-index:5;
+    }
+    .form-wrapper.active { display:block; }
+    .form-title {
+      font-family:"Anton", sans-serif; text-transform:uppercase;
+      font-size:45px; margin-bottom:30px;
+    }
+    .form-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:20px;
+    }
+    .form-group { display:flex; flex-direction:column; gap:8px; }
+    .form-group.full { grid-column:1 / -1; }
+    .form-group label {
+      font-size:10px; font-weight:800; letter-spacing:1px;
+      text-transform:uppercase; color:var(--gold);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background:#1c1c1c; border:1px solid #333; color:white;
+      padding:15px; outline:none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color:var(--gold); }
+    .form-group textarea { min-height:130px; resize:vertical; }
+    .submit-button { margin-top:25px; }
+    .success-message {
+      display:none; margin-top:20px; padding:15px;
+      background:var(--gold); color:#111; font-weight:700;
+    }
+
+    /* ----- membership ----- */
+    .membership { background:#181818; }
+    .membership-grid {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:1px; margin-top:60px; background:var(--line);
+    }
+    .membership-card {
+      background:#181818; padding:35px 25px; min-height:230px;
+    }
+    .membership-card-number { color:var(--gold); font-size:12px; font-weight:800; }
+    .membership-card h3 {
+      font-family:"Anton", sans-serif; text-transform:uppercase;
+      font-size:28px; margin-top:60px;
+    }
+    .membership-card p {
+      color:#888; font-size:12px; line-height:1.7; margin-top:10px;
+    }
+
+    /* ----- MEMBERSHIP - GOLD TITLES ----- */
+    .membership .section-number {
+      color: #F8B801;
+    }
+    .membership .section-title {
+      color: #F8B801;
+    }
+
+    /* ----- referral ----- */
+    .referral { background:var(--paper); color:#111; }
+    .referral-box {
+      border:3px solid #111; padding:60px;
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:60px; align-items:center;
+    }
+    .referral h2 {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(55px,7vw,90px);
+      text-transform:uppercase; line-height:.85;
+    }
+    .referral p { line-height:1.8; color:#555; }
+    .referral strong {
+      color:var(--gold); background:#111; padding:5px 10px;
+    }
+
+    /* ----- artists ----- */
+    .artists { background:#111; }
+    .artist-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:15px; margin-top:60px;
+    }
+    .artist {
+      height:350px; background:#1c1c1c; position:relative; overflow:hidden;
+    }
+    .artist::before {
+      content:"ARTIST"; position:absolute;
+      font-family:"Anton", sans-serif; font-size:80px;
+      color:rgba(248,184,1,0.08); transform:rotate(-90deg);
+      left:-45px; top:100px;
+    }
+    .artist-info {
+      position:absolute; bottom:0; left:0; width:100%;
+      padding:25px; background:linear-gradient(transparent, rgba(0,0,0,0.9));
+    }
+    .artist-info small {
+      color:var(--gold); font-size:9px; letter-spacing:2px; font-weight:800;
+    }
+    .artist-info h3 {
+      font-family:"Anton", sans-serif; font-size:35px;
+      text-transform:uppercase; margin-top:5px;
+    }
+
+    /* ----- testimonial ----- */
+    .testimonial {
+      background:var(--gold); color:#111; text-align:center; padding:100px 20px;
+    }
+    .quote-mark {
+      font-family:"Anton", sans-serif; font-size:100px; line-height:0.5;
+    }
+    .testimonial blockquote {
+      font-family:"Anton", sans-serif; text-transform:uppercase;
+      font-size:clamp(35px,5vw,70px);
+      max-width:900px; margin:30px auto; line-height:.95;
+    }
+    .testimonial cite {
+      font-style:normal; font-size:11px; font-weight:800;
+      letter-spacing:2px; text-transform:uppercase;
+    }
+
+    /* ----- newsletter ----- */
+    .newsletter { background:#181818; }
+    .newsletter-inner {
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+    }
+    .newsletter h2 {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(55px,7vw,90px);
+      text-transform:uppercase; line-height:.85;
+    }
+    .newsletter p { color:#888; line-height:1.7; margin-top:20px; }
+    .newsletter-form {
+      display:flex; border-bottom:2px solid var(--gold);
+    }
+    .newsletter-form input {
+      flex:1; background:transparent; border:0;
+      padding:18px 0; color:white; outline:none;
+    }
+    .newsletter-form button {
+      border:0; background:transparent; color:var(--gold);
+      font-weight:800; cursor:pointer;
+    }
+
+    /* ----- NEWSLETTER - GOLD TITLES ----- */
+    .newsletter .section-number {
+      color: #F8B801;
+    }
+    .newsletter .section-title {
+      color: #F8B801;
+    }
+
+    /* ----- footer ----- */
+    footer {
+      background:#090909; padding:70px 0 30px;
+    }
+    .footer-grid {
+      display:grid; grid-template-columns:1.5fr 1fr 1fr;
+      gap:50px; padding-bottom:50px; border-bottom:1px solid var(--line);
+    }
+    .footer-brand h2 {
+      font-family:"Anton", sans-serif; font-size:50px; text-transform:uppercase;
+    }
+    .footer-brand p {
+      color:#777; font-size:12px; line-height:1.7; max-width:350px; margin-top:15px;
+    }
+    .footer-column h4 {
+      color:var(--gold); font-size:10px; letter-spacing:2px;
+      text-transform:uppercase; margin-bottom:20px;
+    }
+    .footer-column a, .footer-column p {
+      display:block; color:#999; font-size:12px; margin-bottom:10px;
+    }
+    .footer-column a:hover { color:white; }
+    .copyright {
+      padding-top:25px; color:#555; font-size:10px;
+      display:flex; justify-content:space-between;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width:850px) {
+      .nav-links {
+        position:fixed; top:0; right:-100%; width:80%; height:100vh;
+        background:#111; flex-direction:column; justify-content:center;
+        transition:.4s;
+      }
+      .nav-links.active { right:0; }
+      .menu-toggle { display:block; position:relative; z-index:1001; }
+      .hero-content { width:100%; }
+      .hero-side { display:none; }
+      .about-grid, .signing-grid, .referral-box, .newsletter-inner {
+        grid-template-columns:1fr;
+      }
+      .services-header { display:block; }
+      .membership-grid { grid-template-columns:1fr 1fr; }
+      .artist-grid { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr; }
+      .copyright { flex-direction:column; gap:10px; }
+    }
+    @media (max-width:550px) {
+      .section { padding:75px 0; }
+      .logo img { width:48px; height:48px; }
+      .logo-text { font-size:19px; }
+      .hero h1 { font-size:65px; }
+      .hero-buttons { flex-direction:column; }
+      .btn { width:100%; }
+      .service { grid-template-columns:45px 1fr 20px; }
+      .service h3 { font-size:28px; }
+      .membership-grid { grid-template-columns:1fr; }
+      .referral-box { padding:30px; }
+      .form-wrapper { padding:25px; }
+      .form-grid { grid-template-columns:1fr; }
+      .form-group.full { grid-column:auto; }
+    }
+
+    /* ----- Genre Tags (Click-to-Select) ----- */
+    .genre-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 5px 0;
+    }
+    .genre-tag {
+      display: inline-block;
+      padding: 8px 18px;
+      background: #1c1c1c;
+      border: 2px solid #333;
+      color: #bdbdbd;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      border-radius: 0;
+    }
+    .genre-tag:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: scale(1.02);
+    }
+    .genre-tag.selected {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #111;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(248, 184, 1, 0.2);
+    }
+    .genre-tag.selected:hover {
+      background: var(--gold);
+      color: #111;
+      opacity: 0.85;
+    }
+    .genre-tag.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    #otherGenreContainer {
+      margin-top: 15px;
+    }
+    @media (max-width: 550px) {
+      .genre-tag {
+        padding: 6px 14px;
+        font-size: 11px;
+      }
+    }
+
+/* Section CTA layout */
+.section-cta { display:flex; flex-wrap:wrap; gap:14px; margin-top:42px; }
+.section-cta .btn { display:inline-flex; align-items:center; justify-content:center; }
+.signing-cta { margin-top:34px; }
+.referral .btn { margin-top:30px; background:#111; color:#fff; border-color:#111; }
+@media (max-width:700px) {
+  .section-cta { margin-top:30px; }
+  .section-cta .btn { width:100%; }
+}

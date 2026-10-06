@@ -1,0 +1,476 @@
+/* ----- reset & base ----- */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:#111;
+      color:#f5f1e8;
+      font-family:"Montserrat", sans-serif;
+      overflow-x:hidden;
+    }
+    a { color:inherit; text-decoration:none; }
+    button, input, textarea, select { font:inherit; }
+
+    /* ----- variables ----- */
+    :root {
+      --gold:#F8B801;
+      --black:#111;
+      --dark:#181818;
+      --paper:#f5f1e8;
+      --muted:#a7a7a7;
+      --line:rgba(255,255,255,0.15);
+    }
+
+    /* ----- container & helpers ----- */
+    .container { width:min(1200px,90%); margin:auto; }
+    .gold { color:var(--gold); }
+    .eyebrow {
+      color:var(--gold);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    .section { padding:110px 0; }
+    .section-number {
+      font-size:12px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:20px;
+    }
+    .section-title {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(48px,7vw,100px);
+      line-height:.92;
+      text-transform:uppercase;
+      letter-spacing:-1px;
+    }
+    .section-description {
+      max-width:550px;
+      color:#bdbdbd;
+      line-height:1.8;
+      margin-top:25px;
+    }
+
+    /* ----- header ----- */
+    header {
+      position:fixed; top:0; left:0; width:100%; z-index:1000;
+      padding:20px 0; transition:.3s;
+      background:rgba(17,17,17,0.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav {
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo {
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo img {
+      width:58px; height:58px; object-fit:contain;
+    }
+    .logo-text {
+      font-family:"Anton", sans-serif;
+      font-size:23px; letter-spacing:1px;
+    }
+    .logo-text span {
+      display:block; color:var(--gold);
+      font-family:"Montserrat", sans-serif;
+      font-size:8px; letter-spacing:3px; font-weight:700;
+    }
+    .nav-links {
+      display:flex; gap:30px; list-style:none; align-items:center;
+    }
+    .nav-links a {
+      font-size:12px; font-weight:700; text-transform:uppercase;
+      letter-spacing:1px; transition:.3s;
+    }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-button {
+      background:var(--gold); color:#111;
+      padding:13px 20px;
+    }
+    .menu-toggle {
+      display:none; border:0; background:transparent;
+      color:white; font-size:30px; cursor:pointer;
+    }
+
+    /* ----- page hero ----- */
+    .page-hero {
+      padding:180px 0 80px;
+      background:#111;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .page-hero::before {
+      content:"JOIN";
+      position:absolute; right:-60px; top:30%;
+      font-family:"Anton", sans-serif;
+      font-size:25vw; line-height:1;
+      color:rgba(248,184,1,0.035);
+      pointer-events:none;
+    }
+    .page-hero .eyebrow { margin-bottom:15px; }
+    .page-hero h1 {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(55px,9vw,130px);
+      line-height:.9;
+      text-transform:uppercase;
+      letter-spacing:-2px;
+      position:relative;
+      z-index:2;
+    }
+    .page-hero h1 span { color:var(--gold); }
+    .page-hero p {
+      max-width:600px;
+      margin:25px auto 0;
+      color:#bdbdbd;
+      line-height:1.8;
+      position:relative;
+      z-index:2;
+    }
+
+    /* ----- buttons ----- */
+    .btn {
+      display:inline-flex; justify-content:center; align-items:center;
+      padding:17px 28px; font-weight:800; font-size:12px;
+      text-transform:uppercase; letter-spacing:1px;
+      border:1px solid var(--gold); cursor:pointer; transition:.3s;
+    }
+    .btn-primary {
+      background:var(--gold); color:#111;
+    }
+    .btn-primary:hover { transform:translateY(-3px); }
+    .btn-outline { color:white; }
+    .btn-outline:hover { background:white; color:#111; }
+
+    /* ----- benefits detail ----- */
+    .benefits { background:#181818; }
+    .benefits-intro {
+      max-width:700px;
+      margin-bottom:70px;
+    }
+    .benefit-list {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1px;
+      background:var(--line);
+    }
+    .benefit-item {
+      background:#181818;
+      padding:45px 40px;
+      transition:.3s;
+    }
+    .benefit-item:hover {
+      background:#1f1f1f;
+    }
+    .benefit-item .benefit-number {
+      color:var(--gold);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:20px;
+    }
+    .benefit-item h3 {
+      font-family:"Anton", sans-serif;
+      font-size:32px;
+      text-transform:uppercase;
+      line-height:1;
+      margin-bottom:15px;
+    }
+    .benefit-item p {
+      color:#bdbdbd;
+      font-size:14px;
+      line-height:1.8;
+    }
+    .benefit-item .benefit-note {
+      margin-top:15px;
+      color:var(--gold);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+    }
+
+    /* ----- how it works ----- */
+    .how {
+      background:#111;
+    }
+    .how-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:40px;
+      margin-top:60px;
+    }
+    .how-step {
+      border-top:2px solid var(--gold);
+      padding-top:25px;
+    }
+    .how-step .step-number {
+      font-family:"Anton", sans-serif;
+      font-size:60px;
+      color:var(--gold);
+      line-height:1;
+      margin-bottom:15px;
+    }
+    .how-step h3 {
+      font-family:"Anton", sans-serif;
+      font-size:24px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .how-step p {
+      color:#bdbdbd;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    /* ----- sign-up form ----- */
+    .signup {
+      background:var(--gold);
+      color:#111;
+      position:relative;
+      overflow:hidden;
+    }
+    .signup::after {
+      content:"MEMBER";
+      position:absolute;
+      right:-80px;
+      bottom:-100px;
+      font-family:"Anton", sans-serif;
+      font-size:220px;
+      opacity:0.06;
+      pointer-events:none;
+    }
+    .signup-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      position:relative;
+      z-index:2;
+    }
+    .signup h2 {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(50px,6vw,90px);
+      line-height:.9;
+      text-transform:uppercase;
+    }
+    .signup p {
+      margin-top:20px;
+      line-height:1.8;
+      max-width:500px;
+    }
+    .signup-note {
+      margin-top:30px;
+      border-left:3px solid #111;
+      padding-left:20px;
+      font-size:14px;
+    }
+    .signup-note strong {
+      display:block;
+      font-family:"Anton", sans-serif;
+      font-size:24px;
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+
+    .signup-form-wrap {
+      background:#111;
+      color:white;
+      padding:40px;
+    }
+    .signup-form-wrap h3 {
+      font-family:"Anton", sans-serif;
+      font-size:32px;
+      text-transform:uppercase;
+      margin-bottom:25px;
+    }
+    .signup-form-wrap h3 span { color:var(--gold); }
+    .form-row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+    .form-group {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:15px;
+    }
+    .form-group.full { grid-column:1 / -1; }
+    .form-group label {
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--gold);
+    }
+    .form-group input,
+    .form-group textarea {
+      background:#1c1c1c;
+      border:1px solid #333;
+      color:white;
+      padding:15px;
+      outline:none;
+      transition:.3s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color:var(--gold);
+    }
+    .form-group textarea {
+      min-height:100px;
+      resize:vertical;
+    }
+    .submit-button {
+      width:100%;
+      margin-top:10px;
+      background:var(--gold);
+      color:#111;
+      border-color:var(--gold);
+    }
+    .submit-button:hover {
+      background:white;
+      border-color:white;
+    }
+    .success-message {
+      display:none;
+      margin-top:20px;
+      padding:15px;
+      background:var(--gold);
+      color:#111;
+      font-weight:700;
+      text-align:center;
+    }
+
+    /* ----- FAQ ----- */
+    .faq { background:#181818; }
+    .faq-list {
+      margin-top:60px;
+      border-top:1px solid var(--line);
+    }
+    .faq-item {
+      border-bottom:1px solid var(--line);
+      padding:30px 0;
+      cursor:pointer;
+    }
+    .faq-item:hover .faq-question { color:var(--gold); }
+    .faq-question {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-family:"Anton", sans-serif;
+      font-size:24px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+      transition:.3s;
+    }
+    .faq-question .faq-toggle {
+      color:var(--gold);
+      font-size:28px;
+      font-family:"Montserrat", sans-serif;
+      font-weight:400;
+      transition:.3s;
+    }
+    .faq-answer {
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s ease;
+    }
+    .faq-answer p {
+      padding-top:20px;
+      color:#bdbdbd;
+      font-size:14px;
+      line-height:1.9;
+      max-width:800px;
+    }
+    .faq-item.active .faq-answer {
+      max-height:400px;
+    }
+    .faq-item.active .faq-toggle {
+      transform:rotate(45deg);
+    }
+
+    /* ----- final CTA ----- */
+    .final-cta {
+      background:#111;
+      text-align:center;
+      padding:120px 20px;
+    }
+    .final-cta h2 {
+      font-family:"Anton", sans-serif;
+      font-size:clamp(50px,7vw,100px);
+      text-transform:uppercase;
+      line-height:.9;
+    }
+    .final-cta h2 span { color:var(--gold); }
+    .final-cta p {
+      max-width:600px;
+      margin:25px auto 40px;
+      color:#bdbdbd;
+      line-height:1.8;
+    }
+    .final-cta-buttons {
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    /* ----- footer ----- */
+    footer {
+      background:#090909; padding:70px 0 30px;
+    }
+    .footer-grid {
+      display:grid; grid-template-columns:1.5fr 1fr 1fr;
+      gap:50px; padding-bottom:50px; border-bottom:1px solid var(--line);
+    }
+    .footer-brand h2 {
+      font-family:"Anton", sans-serif; font-size:50px; text-transform:uppercase;
+    }
+    .footer-brand p {
+      color:#777; font-size:12px; line-height:1.7; max-width:350px; margin-top:15px;
+    }
+    .footer-column h4 {
+      color:var(--gold); font-size:10px; letter-spacing:2px;
+      text-transform:uppercase; margin-bottom:20px;
+    }
+    .footer-column a, .footer-column p {
+      display:block; color:#999; font-size:12px; margin-bottom:10px;
+    }
+    .footer-column a:hover { color:white; }
+    .copyright {
+      padding-top:25px; color:#555; font-size:10px;
+      display:flex; justify-content:space-between;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width:850px) {
+      .nav-links {
+        position:fixed; top:0; right:-100%; width:80%; height:100vh;
+        background:#111; flex-direction:column; justify-content:center;
+        transition:.4s;
+      }
+      .nav-links.active { right:0; }
+      .menu-toggle { display:block; position:relative; z-index:1001; }
+      .benefit-list { grid-template-columns:1fr; }
+      .how-grid { grid-template-columns:1fr; gap:30px; }
+      .signup-grid { grid-template-columns:1fr; gap:40px; }
+      .footer-grid { grid-template-columns:1fr; }
+      .copyright { flex-direction:column; gap:10px; }
+      .form-row { grid-template-columns:1fr; }
+    }
+    @media (max-width:550px) {
+      .section { padding:75px 0; }
+      .page-hero { padding:140px 0 60px; }
+      .logo img { width:48px; height:48px; }
+      .logo-text { font-size:19px; }
+      .btn { width:100%; }
+      .benefit-item { padding:35px 25px; }
+      .benefit-item h3 { font-size:26px; }
+      .signup-form-wrap { padding:25px; }
+      .faq-question { font-size:18px; }
+      .final-cta-buttons { flex-direction:column; }
+    }

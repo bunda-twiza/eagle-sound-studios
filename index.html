@@ -1,0 +1,279 @@
+html
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eagle Sound Studio | Lusaka</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/home.css"></head>
+<body>
+<!-- HEADER -->
+<header id="header">
+<div class="container nav">
+<a class="logo" href="#home">
+<img alt="Eagle Sound Studios" src="EAGLE-SOUND-STUDIOS-LOGO.png"/>
+<div class="logo-text">EAGLE SOUND<span>STUDIOS · LUSAKA</span></div>
+</a>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html#home">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#services">Services</a></li>
+<li><a href="index.html#artists">Artists</a></li>
+<li><a href="index.html#membership">Membership</a></li>
+<li><a class="nav-button" href="book.html">Book Now</a></li>
+</ul>
+</div>
+</header>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="hero-row">
+<!-- Left side: Big heading -->
+<div class="hero-heading">
+<div class="eyebrow">Lusaka · Zambia</div>
+<h1>Your Sound.<br/>Your <span>Story.</span><br/>Your Future.</h1>
+</div>
+<!-- Right side: Logo + everything else underneath -->
+<div class="hero-right">
+<div class="hero-logo-right">
+<img alt="Eagle Sound Studios" src="EAGLE-SOUND-STUDIOS-LOGO.png"/>
+</div>
+<div class="hero-content-right">
+<div class="hero-location">EAGLE SOUND STUDIOS</div>
+<p class="hero-tagline">A creative home for artists who aren't here to sound like everybody else.</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="services.html">Explore the studio</a>
+<a class="btn btn-outline" href="artists.html#artist-opportunity">Artist signing</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hero-side">Built for the next generation</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="section about" id="about">
+<div class="container about-grid">
+<div>
+<div class="section-number">01 / ABOUT</div>
+<div class="about-big">More<br/>Than<br/><span>Sound.</span></div>
+</div>
+<div>
+<p class="eyebrow">Eagle Sound Studios</p>
+<p class="section-description">We believe music isn't just something you hear. It's something you experience.</p>
+<p class="section-description">Eagle Sound Studios is a creative space built for artists, musicians and storytellers who want to turn ideas into something real.</p>
+<p class="section-description">From the first recording to the final master, we're here to help you make your sound impossible to ignore.</p>
+<div class="section-cta">
+<a class="btn btn-primary" href="about.html">Read our story</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="section services" id="services">
+<div class="container">
+<div class="services-header">
+<div>
+<div class="section-number">02 / SERVICES</div>
+<h2 class="section-title">Make<br/>Noise.</h2>
+</div>
+<p class="section-description">Professional production services for artists who take their craft seriously.</p>
+</div>
+<div class="service-list">
+<div class="service"><div class="service-number">01</div><div><h3>Recording</h3><p>Bring your performance to life.</p></div><div class="service-arrow">→</div></div>
+<div class="service"><div class="service-number">02</div><div><h3>Mixing</h3><p>Make every element hit exactly where it should.</p></div><div class="service-arrow">→</div></div>
+<div class="service"><div class="service-number">03</div><div><h3>Mastering</h3><p>Give your music the final professional finish.</p></div><div class="service-arrow">→</div></div>
+<div class="service"><div class="service-number">04</div><div><h3>Video Production</h3><p>Turn your music into something people can see.</p></div><div class="service-arrow">→</div></div>
+<div class="section-cta">
+<a class="btn btn-primary" href="services.html">View services and gear</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SIGNING + FORM -->
+<section class="section signing" id="signing">
+<div class="container">
+<div class="signing-grid">
+<div>
+<div class="section-number">03 / ARTIST OPPORTUNITY</div>
+<h2>We Are<br/>Looking<br/>For <span>YOU.</span></h2>
+<p>Think you've got what it takes? We're looking for artists with something different to say and the drive to take their music further.</p>
+<button class="btn signing-button" id="applyButton">Apply for signing</button>
+</div>
+<div class="signing-note">
+<strong>No shortcuts.</strong>
+<span>No fake promises. Just music, development, creativity and an opportunity to build something meaningful.</span>
+</div>
+</div>
+<div class="section-cta signing-cta">
+<a class="btn btn-outline" href="artists.html#artist-opportunity">Meet the artists</a>
+<a class="btn btn-primary" href="book.html">Book a session</a>
+</div>
+</div>
+<!-- APPLICATION FORM -->
+<div class="form-wrapper" id="applicationForm">
+<div class="form-title">Artist Application</div>
+<form id="artistForm">
+<div class="form-grid">
+<div class="form-group">
+<label>Artist / Stage Name</label>
+<input id="artistName" placeholder="Your artist name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Government Name</label>
+<input id="governmentName" placeholder="Your full legal name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input id="artistEmail" placeholder="you@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label>Phone</label>
+<input id="artistPhone" placeholder="+260..." type="tel"/>
+</div>
+<!-- Genre (CLICK-TO-SELECT) -->
+<div class="form-group full">
+<label>Genre (click to select, max 5)</label>
+<div class="genre-tag-container" id="genreContainer">
+<span class="genre-tag" data-value="Hip Hop / Rap">Hip Hop / Rap</span>
+<span class="genre-tag" data-value="Afrobeats">Afrobeats</span>
+<span class="genre-tag" data-value="R&amp;B">R&amp;B</span>
+<span class="genre-tag" data-value="Pop">Pop</span>
+<span class="genre-tag" data-value="Gospel">Gospel</span>
+<span class="genre-tag" data-value="Dancehall">Dancehall</span>
+<span class="genre-tag" data-value="Zamrock">Zamrock</span>
+<span class="genre-tag" data-value="Kalindula">Kalindula</span>
+<span class="genre-tag" data-value="Dunka">Dunka</span>
+<span class="genre-tag" data-value="Reggae">Reggae</span>
+<span class="genre-tag" data-value="Other">Other</span>
+</div>
+<p class="">
+<span id="genreCount">0</span> / 5 genres selected. Click a genre to select/deselect.
+          </p>
+</div>
+<div class="form-group full" id="otherGenreContainer">
+<label>Please specify your other genre(s)</label>
+<input id="otherGenre" placeholder="e.g. Traditional, Folk, etc." type="text"/>
+</div>
+<div class="form-group full">
+<label>Tell us about yourself</label>
+<textarea id="artistStory" placeholder="Who are you as an artist? What makes your music different?" required=""></textarea>
+</div>
+<div class="form-group full">
+<label>Audio Samples (2 to 3 tracks)</label>
+<input accept=".mp3,.wav,.aac,.m4a,.flac" id="audioSamples" multiple="" required="" type="file"/>
+<p class="">Upload 2-3 audio files (MP3, WAV, AAC, M4A, FLAC). Max 3 files.</p>
+</div>
+<div class="form-group full">
+<label>Music / Social Link</label>
+<input id="artistLink" placeholder="Spotify, YouTube, SoundCloud, Instagram..." type="url"/>
+</div>
+</div>
+<button class="btn btn-primary submit-button" type="submit">Submit application</button>
+<div class="success-message" id="successMessage">Application received! We'll be in touch.</div>
+</form>
+</div>
+</section>
+<!-- MEMBERSHIP -->
+<section class="section membership" id="membership">
+<div class="container">
+<div class="section-number">04 / MEMBERSHIP</div>
+<h2 class="section-title">More Music.<br/>More Value.</h2>
+<div class="membership-grid">
+<div class="membership-card"><div class="membership-card-number">01</div><h3>Birthday<br/>Session</h3><p>Enjoy a free birthday recording session.</p></div>
+<div class="membership-card"><div class="membership-card-number">02</div><h3>3rd Session<br/>Free</h3><p>Complete two sessions and your third is on us.</p></div>
+<div class="membership-card"><div class="membership-card-number">03</div><h3>Half Price<br/>Mondays</h3><p>Start your week in the studio for less.</p></div>
+<div class="membership-card"><div class="membership-card-number">04</div><h3>Priority<br/>Booking</h3><p>Members get first access to available sessions.</p></div>
+</div>
+<div class="section-cta">
+<a class="btn btn-primary" href="membership.html">See membership benefits</a>
+</div>
+</div>
+</section>
+<!-- REFERRAL -->
+<section class="section referral">
+<div class="container">
+<div class="referral-box">
+<div>
+<div class="section-number">05 / REFERRALS</div>
+<h2>Bring<br/>Your<br/>People.</h2>
+</div>
+<div>
+<p>Know another artist who needs a studio? Send them our way.</p>
+<p class="">When your referral books a session, <strong>you get rewarded.</strong></p>
+<a class="btn bg-black text-white mt-30" href="book.html">Get referral details</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ARTISTS -->
+<section class="section artists" id="artists">
+<div class="container">
+<div class="section-number">06 / ARTISTS</div>
+<h2 class="section-title">The Ones<br/>Making Noise.</h2>
+<div class="artist-grid">
+<div class="artist"><div class="artist-info"><small>EAGLE SOUND</small><h3>Artist One</h3></div></div>
+<div class="artist"><div class="artist-info"><small>EAGLE SOUND</small><h3>Artist Two</h3></div></div>
+<div class="artist"><div class="artist-info"><small>EAGLE SOUND</small><h3>Artist Three</h3></div></div>
+<div class="section-cta">
+<a class="btn btn-primary" href="artists.html">Meet the Eagle Sound artists</a>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+<div class="quote-mark">"</div>
+<blockquote>Your sound deserves a place where it can become something bigger.</blockquote>
+<cite>Eagle Sound Studios</cite>
+</section>
+<!-- NEWSLETTER -->
+<section class="section newsletter">
+<div class="container newsletter-inner">
+<div>
+<div class="section-number">07 / STAY CONNECTED</div>
+<h2>Don't Miss<br/>The Next Move.</h2>
+<p>Get studio updates, opportunities, artist news and special offers.</p>
+</div>
+<form class="newsletter-form" id="newsletterForm">
+<input placeholder="Your email address" required="" type="email"/>
+<button type="submit">JOIN →</button>
+</form>
+</div>
+</section>
+<!-- FOOTER -->
+<footer id="contact">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<h2>Eagle<br/><span class="gold">Sound.</span></h2>
+<p>A creative recording and production studio in Lusaka, Zambia.</p>
+</div>
+<div class="footer-column">
+<h4>Contact</h4>
+<p>Lusaka, Zambia</p>
+<a href="tel:+260972548680">+260 97 254 8680</a>
+<a href="mailto:eaglesoundstudio@gmail.com">eaglesoundstudio@gmail.com</a>
+</div>
+<div class="footer-column">
+<h4>Navigate</h4>
+<a href="index.html#home">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#artists">Artists</a>
+<a href="index.html#membership">Membership</a>
+<a href="book.html">Book Now</a>
+</div>
+</div>
+<div class="copyright"><span>© 2026 Eagle Sound Studios</span><span>Lusaka · Zambia</span></div>
+</div>
+</footer>
+
+<script defer="True" src="js/script.js"></script></body>
+</html>
