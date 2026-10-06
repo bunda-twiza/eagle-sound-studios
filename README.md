@@ -1,27 +1,34 @@
-Eagle Sound Studios — Website
-A multi-page website for Eagle Sound Studios, a music production studio and record label based in Lusaka, Zambia.
+**Eagle Sound Studios**
+
+This is the website for Eagle Sound Studios, a music production studio and record label in Lusaka, Zambia.
 
 Live site: [paste your Netlify URL here once deployed]
 
-Overview
-The site serves two audiences:
+**What it is**
 
-Paying clients — artists, choirs, podcasters, voice-over artists
+The site is built for two groups of people: paying clients (artists, choirs, podcasters, voice over artists) and artists who might want to sign with the label.
 
-Potential signees — artists looking for a label home
+It's a front end project with real JavaScript doing actual work. Forms validate on the client side and show confirmation messages. Nothing is wired to a backend yet. Real submissions, member accounts, and a database come in Phase 2.
 
-It's a front-end project with real interactive JavaScript. Forms validate on the client side and show confirmation states. Real submissions, member accounts, and a database come in Phase 2.
+**Pages**
 
-Pages
-Page	What it does
-index.html	Home, artist signing form, membership preview, referral info, testimonial, newsletter
-about.html	Studio story, who we work with, image carousel, values, team, numbers
-services.html	Services and gear — Recording, Mixing, Mastering, Video Production
-artists.html	Artist roster and signing opportunity
-membership.html	Membership benefits, sign-up form, FAQ
-book.html	Booking form with Google Calendar availability embed
-File Structure
-text
+Here's what each page does.
+
+index.html is the home page. It has the artist signing form, a membership preview, referral info, a testimonial, and a newsletter signup.
+
+about.html covers the studio story, who we work with, an image carousel, values, team, and some numbers.
+
+services.html lists what we offer: Recording, Mixing, Mastering, and Video Production, along with the gear.
+
+artists.html shows the artist roster and the signing opportunity.
+
+membership.html has the membership benefits, a sign up form, and an FAQ.
+
+book.html is the booking form with a Google Calendar embed for availability.
+
+**File Structure**
+
+```
 Eagle Sound Studio
 │
 ├── index.html
@@ -43,115 +50,76 @@ Eagle Sound Studio
 │   └── script.js
 │
 └── EAGLE-SOUND-STUDIOS-LOGO.png
-Each page has its own CSS file rather than one large stylesheet. This keeps page styling independent and prevents conflicts between sections.
+```
 
-One shared script.js runs across the whole site. Because different pages contain different elements, the JavaScript checks whether an element exists before applying logic to it — so the same file safely runs everywhere.
+Each page has its own CSS file instead of one big stylesheet. That keeps things independent and stops styles from bleeding between sections.
 
-Tech Stack
-HTML, CSS, JavaScript — no frameworks
+There's one shared script.js across the whole site. Since different pages have different elements, the JavaScript checks if an element exists before running logic on it. That way the same file works everywhere without errors.
 
-Google Fonts — Anton (display), Montserrat (body)
+**Tech Stack**
 
-Google Calendar embed — for booking availability
+Plain HTML, CSS, and JavaScript. No frameworks.
 
-Netlify Forms — for form submissions
+Google Fonts for Anton (display) and Montserrat (body).
 
-No backend yet — Phase 2 will add member login, dashboard, and a real database
+Google Calendar embed for booking availability.
 
-The project is intentionally built with plain HTML, CSS, and JavaScript so it stays lightweight and easy to maintain.
+Netlify Forms for form submissions.
 
-Design System
-Element	Value
-Primary Gold	#F8B801
-Background	#111111
-Dark	#181818
-Text / Paper	#F5F1E8
-Secondary Text	#BDBDBD
-Muted Text	#A7A7A7
-Display Font	Anton
-Body Font	Montserrat
-Colour behaviour: dark black and cream foundation, gold as the accent. Artist signing and testimonial sections use gold as the background. Referral section is cream. Membership is dark. Footer is near-black.
+No backend yet. Phase 2 adds member login, a dashboard, and a real database.
 
-Key Decisions
-1. Gold used sparingly.
-Early drafts had gold everywhere. It looked cheap. I pulled it back so gold only appears on buttons, borders, section numbers, and key words. Every gold element now feels intentional.
+I kept it plain on purpose. It stays lightweight and easy to maintain.
 
-2. No membership tiers.
-Early ideas had Bronze, Silver, Gold, Platinum. I killed them. Tiers make members feel ranked and create admin overhead. One membership, same perks for everyone.
+**Design System**
 
-3. Referrals are members-only.
-The first version let anyone generate a referral code. That broke tracking. I made it members-only with a sign-up form that captures name, artist name, email, and phone. Now every referral is traceable.
+| Element | Value |
+| :--- | :--- |
+| Primary Gold | #F8B801 |
+| Background | #111111 |
+| Dark | #181818 |
+| Text / Paper | #F5F1E8 |
+| Secondary Text | #BDBDBD |
+| Muted Text | #A7A7A7 |
+| Display Font | Anton |
+| Body Font | Montserrat |
 
-4. Cash reward option.
-The original referral reward was 10% off a session. I added a 50 ZMW cash alternative so members can choose what's actually useful to them.
+The foundation is dark black and cream with gold as the accent. Artist signing and testimonial sections use gold as the background. The referral section is cream. Membership is dark. The footer is near black.
 
-5. Member vs non-member booking flow.
-The booking page needs to look different depending on who's booking. Members should see perks applied automatically. Non-members should see a clear path to sign up. Phase 2 will detect logged-in members and personalize this.
+**Key Decisions**
 
-6. Artist signing form with genre tags.
-The form collects stage name, government name, email, phone, genre tags (click to select, max 5), a bio, 2–3 audio samples, and social links. The genre tag system was custom and needed several iterations to feel smooth.
+Gold used sparingly. Early drafts had gold everywhere. It looked cheap. I pulled it back so gold only shows up on buttons, borders, section numbers, and key words. Every gold element now feels intentional.
 
-JavaScript Logic
-Navigation
+No membership tiers. Early ideas had Bronze, Silver, Gold, Platinum. I killed them. Tiers make members feel ranked and create admin overhead. One membership, same perks for everyone.
 
-Mobile menu opens and closes
+Referrals are members only. The first version let anyone generate a referral code. That broke tracking. I made it members only with a sign up form that captures name, artist name, email, and phone. Now every referral is traceable.
 
-Menu closes after selecting a link
+Cash reward option. The original referral reward was 10% off a session. I added a 50 ZMW cash alternative so members can choose what's actually useful to them.
 
-Header responds to scroll position
+Member vs non member booking flow. The booking page needs to look different depending on who's booking. Members should see perks applied automatically. Non members should see a clear path to sign up. Phase 2 will detect logged in members and personalize this.
 
-Artist application
+Artist signing form with genre tags. The form collects stage name, government name, email, phone, genre tags (click to select, max 5), a bio, 2 to 3 audio samples, and social links. The genre tag system was custom and needed several iterations to feel smooth.
 
-Application form opens and closes
+**JavaScript Logic**
 
-Genre tags selectable, max 5
+Navigation: mobile menu opens and closes, menu closes after selecting a link, header responds to scroll position.
 
-"Other" genre field appears when selected
+Artist application: form opens and closes, genre tags selectable up to 5, "Other" genre field appears when selected, required fields validated, email validated, 2 to 3 audio files required, success message on valid submission.
 
-Required fields validated
+About page: image carousel with prev/next controls and navigation dots.
 
-Email validated
+Booking: service selection, session length selection, date cannot be in the past, required field validation, confirmation message on submit.
 
-2–3 audio files required
+Membership: required field validation, confirmation message on submit.
 
-Success message on valid submission
+FAQ: questions open and close.
 
-About page
+Newsletter: email validation, subscription confirmation.
 
-Image carousel with prev/next controls and navigation dots
+**Current Form Limitation**
 
-Booking
+Forms validate on the front end for now. A successful submission shows a confirmation message but isn't wired to a live backend yet.
 
-Service selection
-
-Session length selection
-
-Date cannot be in the past
-
-Required field validation
-
-Confirmation message on submit
-
-Membership
-
-Required field validation
-
-Confirmation message on submit
-
-FAQ
-
-Questions open and close
-
-Newsletter
-
-Email validation
-
-Subscription confirmation
-
-Current Form Limitation
-Forms currently validate on the front end. A successful submission shows a confirmation message but is not yet wired to a live backend.
-
-What's missing (intentional at this stage):
+What's missing, and intentional at this stage:
 
 Database
 
@@ -165,77 +133,32 @@ Booking storage
 
 Automatic referral tracking
 
-What Was Hard
-Keeping the design consistent.
-The visual identity went through several iterations. Earlier versions looked generic. I had to push back multiple times and lock in a palette that felt right — cream, black, and gold, with gold used sparingly. Separate CSS files per page stopped styles from bleeding across sections.
+**What Was Hard**
 
-Referral tracking without a backend.
-The referral system looks simple. Without a database, tracking who referred who is manual. The current version uses a sign-up form. Phase 2 moves this into a real database.
+Keeping the design consistent. The visual identity went through several iterations. Earlier versions looked generic. I had to push back multiple times and lock in a palette that felt right: cream, black, and gold, with gold used sparingly. Separate CSS files per page stopped styles from bleeding across sections.
 
-The booking calendar.
-A real calendar showing booked vs available dates needs a backend. For now, the booking page uses a Google Calendar embed where bookings are added manually. Phase 2 fixes this.
+Referral tracking without a backend. The referral system looks simple. Without a database, tracking who referred who is manual. The current version uses a sign up form. Phase 2 moves this into a real database.
 
-Balancing member and non-member experience.
-The site has to serve both audiences without confusing either. Non-members need a clear path to sign up. Members need to feel their perks are already working. Getting that balance right took several iterations.
+The booking calendar. A real calendar showing booked vs available dates needs a backend. For now, the booking page uses a Google Calendar embed where bookings are added manually. Phase 2 fixes this.
 
-Artist application logic.
-The genre-selection system needed the most iteration — the max-five rule, the conditional "Other" field, audio-file validation, and submission validation.
+Balancing member and non member experience. The site has to serve both audiences without confusing either. Non members need a clear path to sign up. Members need to feel their perks are already working. Getting that balance right took several iterations.
 
-JavaScript across multiple pages.
-One script.js shared across the whole site. Every block checks if its target element exists before running, so the same file works on every page without errors.
+Artist application logic. The genre selection system needed the most iteration: the max five rule, the conditional "Other" field, audio file validation, and submission validation.
 
-What's Next
-Phase 1 — Front-end completion
+JavaScript across multiple pages. One script.js shared across the whole site. Every block checks if its target element exists before running, so the same file works on every page without errors.
 
-Finish testing all JavaScript interactions
+**What's Next**
 
-Test every page on desktop and mobile
+Phase 1, front end completion: finish testing all JavaScript interactions, test every page on desktop and mobile, fix remaining UI and logic issues, improve form error messages, finalize responsive behaviour.
 
-Fix remaining UI and logic issues
+Phase 2, backend: real artist application submissions, real booking submissions, email notifications, member registration and login, member dashboard, database.
 
-Improve form error messages
+Phase 3, member system: member accounts, automatic membership verification, member only referral codes, referral tracking, automatic reward tracking, session history and benefits.
 
-Finalize responsive behaviour
+Phase 4, studio administration: admin dashboard, artist application management, booking, member, and referral management, reward tracking.
 
-Phase 2 — Backend
+**Built With**
 
-Real artist application submissions
-
-Real booking submissions
-
-Email notifications
-
-Member registration and login
-
-Member dashboard
-
-Database
-
-Phase 3 — Member system
-
-Member accounts
-
-Automatic membership verification
-
-Member-only referral codes
-
-Referral tracking
-
-Automatic reward tracking
-
-Session history and benefits
-
-Phase 4 — Studio administration
-
-Admin dashboard
-
-Artist application management
-
-Booking, member, and referral management
-
-Reward tracking
-
-Built With
 AI assistance for code generation, debugging, structure, and initial copywriting.
 
 The website was developed with help from multiple AI tools. One AI handled the initial build. Another continued development, debugged existing code, and added or refined functionality.
@@ -244,8 +167,8 @@ Concept, design direction, business logic, brand direction, and every creative d
 
 The AI was a tool. It wrote HTML, CSS, and JavaScript faster than I could have alone. Every business decision, every section on every page, every colour choice, and every offer came from me. The AI executed. I decided.
 
-Author
+**Author**
+
 Twiza Bunda
 Creative Director
 Lusaka, Zambia
-
