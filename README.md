@@ -2,7 +2,7 @@
 
 This is the website for Eagle Sound Studios, a music production studio and record label in Lusaka, Zambia.
 
-Live site: [paste your Netlify URL here once deployed]
+Live site: https://6ac55036f8ee63567d25f79d--flourishing-tiramisu-ff3e80.netlify.app/
 
 **What it is**
 
